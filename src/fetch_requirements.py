@@ -8,8 +8,10 @@ if __name__ == '__main__':
             subdir_path = os.path.join(dirname, subdirname)
 
         for filename in filenames:
-            filename_path =  os.path.join(dirname, filename)
+            filename_path = os.path.join(dirname, filename)
+
             # check if requirements.txt has some information in it.
+
             if filename == 'requirements.txt':
                 # read file contents.
                 with open(filename_path) as requirementsfile:
@@ -17,7 +19,8 @@ if __name__ == '__main__':
                     if len(requirements_content):
                         print "Found content in {}".format(filename_path)
                         # since there exists a requirements.txt which has some libraries mentioned, download them in lib/ folder if it's empty
-                        lib_dir_path = subdir_path+"/lib/"
-                        pip_download_command = "pip download -r {} -d {}".format(filename_path, lib_dir_path)
-                        subprocess.call(pip_download_command.split(" "))
+                        lib_dir_path = dirname + "/lib/"
+                        pip_download_command = "pip download -r {} -d {}".format(
+                            filename_path, lib_dir_path)
 
+                        subprocess.call(pip_download_command.split(" "))

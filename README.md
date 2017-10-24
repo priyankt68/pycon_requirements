@@ -1,10 +1,12 @@
-## What
+### What
 
 This repository is useful is creating requirements.txt file for each workshop and directory.
 
-It does following 2 things.
+It does following stuff.
 1. File to create folders as per workshops and talks.
-2. For each talk/workshop, there exists a requirements.txt. Each of this requirement is written as talk_id_requirements.txt within each of the folders file.
+2. For each talk/workshop, there exists a requirements.txt.
+3. Using ```src/fetch_requirements.py```, we can download packages as well deps locally. It uses ```pip download``` for it.
+4. This can further be used to installed locally downloaded packages using ```pip install --find-links```.
 
 ### Creating requirements.txt for each of the talk and workshop
 
